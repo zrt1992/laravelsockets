@@ -83,9 +83,9 @@
         },
         listen() {
           Echo.private('post.'+this.post.id)
-              .listen('NewComment', (comment) => {
-                this.comments.unshift(comment);
-              })
+                  .listen('NewComment', (e) => {
+                    this.comments.unshift(e);
+                  });
         }
       }
     })

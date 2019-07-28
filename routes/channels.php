@@ -11,10 +11,24 @@
 |
 */
 
+use Illuminate\Support\Facades\Log;
+
 Broadcast::channel('App.User.{id}', function ($user, $id) {
     return (int) $user->id === (int) $id;
 });
 
+
+
 Broadcast::channel('post.{id}', function ($user, $id) {
+    Log::info($user);
+    Log::info(\App\Post::find($id)->user_id);
+    Log::info($id);
+    Log:info("end htis line");
     return $user->id == \App\Post::find($id)->user_id;
 });
+
+
+
+//Broadcast::channel('post.{id}', function ($user, $id) {
+//   return true;
+//});

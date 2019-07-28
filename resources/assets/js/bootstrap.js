@@ -49,7 +49,7 @@ window.Pusher = require('pusher-js');
 
 window.Echo = new Echo({
     broadcaster: 'pusher',
-    key: '51aaa8133b2080a29f6d',
-    cluster: 'mt1',
+    key: 'db68b296f6713cab15d7',
+    cluster: 'ap2', //My app is US-EAST
     encrypted: true
 });
